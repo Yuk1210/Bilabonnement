@@ -1,0 +1,57 @@
+package com.example.demo.Models;
+
+public class CarModels {
+    private int id;
+    private String vehicleNumber;
+    private String vin;
+    private String brand;
+    private String model;
+    private CarStatus status;
+    private double basePrice;
+
+    public CarModels(int id, String vehicleNumber, String vin, String brand, String model, CarStatus status, double basePrice) {
+        this.id = id;
+        this.vehicleNumber = vehicleNumber;
+        this.vin = vin;
+        this.brand = brand;
+        this.model = model;
+        this.status = status;
+        this.basePrice = basePrice;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public String getVin() {
+        return vin;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public CarStatus getStatus() {
+        return status;
+    }
+
+    public void markAsAvailable() {
+        this.status = CarStatus.AVAILABLE;
+    }
+
+    public void markAsUnavailable() {
+        this.status = CarStatus.UNAVAILABLE;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+}
