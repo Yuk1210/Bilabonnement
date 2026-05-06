@@ -1,11 +1,13 @@
 package com.example.demo.Controllers;
 
-import ch.qos.logback.core.model.Model;
+import org.springframework.ui.Model;
+import com.example.demo.Models.RentalAgreement;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 public class RentalAgreementController {
+
     @GetMapping("/aftaler")
     public String getAllAgreements(Model model) {
         model.addAttribute("agreements", service.getAllAgreements());
