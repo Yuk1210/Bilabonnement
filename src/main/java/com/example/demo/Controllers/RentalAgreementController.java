@@ -1,12 +1,21 @@
 package com.example.demo.Controllers;
 
-import org.springframework.ui.Model;
 import com.example.demo.Models.RentalAgreement;
+import com.example.demo.Services.RentalAgreementService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Controller
 public class RentalAgreementController {
+
+    private final RentalAgreementService service;
+
+    public RentalAgreementController(RentalAgreementService service) {
+        this.service = service;
+    }
 
     @GetMapping("/aftaler")
     public String getAllAgreements(Model model) {
@@ -16,7 +25,7 @@ public class RentalAgreementController {
 
     @GetMapping("/aftaler/opret")
     public String createForm(Model model) {
-        model.addAttribute("agreement", new RentalAgreement(0,null,null,0,null,null));
+        model.addAttribute("agreement", new RentalAgreement(0, null, null, 0, null, null));
         return "opret-aftale";
     }
 
