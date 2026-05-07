@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 public class Car {
     private int id;
-    private String vehicleNumber;
     private String vin;
     private String brand;
     private String model;
@@ -13,7 +12,6 @@ public class Car {
 
     public Car(int id, String vehicleNumber, String vin, String brand, String model, CarStatus status, BigDecimal basePrice) {
         this.id = id;
-        this.vehicleNumber = vehicleNumber;
         this.vin = vin;
         this.brand = brand;
         this.model = model;
@@ -23,10 +21,6 @@ public class Car {
 
     public int getId() {
         return id;
-    }
-
-    public String getVehicleNumber() {
-        return vehicleNumber;
     }
 
     public String getVin() {
