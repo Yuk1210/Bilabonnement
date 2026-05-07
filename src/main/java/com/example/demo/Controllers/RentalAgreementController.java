@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.math.BigDecimal;
+
 @Controller
 public class RentalAgreementController {
 
@@ -25,7 +27,7 @@ public class RentalAgreementController {
 
     @GetMapping("/aftaler/opret")
     public String createForm(Model model) {
-        model.addAttribute("agreement", new RentalAgreement(0, null, null, 0, null, null));
+        model.addAttribute("agreement", new RentalAgreement(0, null, null, new BigDecimal("3,25"), null, null));
         return "opret-aftale";
     }
 

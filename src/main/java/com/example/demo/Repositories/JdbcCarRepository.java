@@ -19,8 +19,7 @@ public class JdbcCarRepository implements CarRepository {
         List<Car> cars = new ArrayList<>();
        String sql = "SELECT * FROM car";
 
-       try(Connection connection = DriverManager.getConnection(url,user,password)
-       ){
+       try(Connection connection = DriverManager.getConnection(url,user,password)){
            PreparedStatement statement = connection.prepareStatement(sql);
            ResultSet resultSet = statement.executeQuery();
 
@@ -30,16 +29,41 @@ public class JdbcCarRepository implements CarRepository {
                        resultSet.getString("brand"),
                        resultSet.getString("model"),
                        CarStatus.valueOf(resultSet.getString("status")),
-                       resultSet.getDouble("purchase_price")
+                       resultSet.getBigDecimal("purchase_price")
                );
 
                cars.add(car);
            }
        }
        catch (SQLException e){
-           e.getMessage();
+           System.out.println("fejl: "+ e.getMessage());
        }
        return cars;
+    }
+    @Override
+    public Car findById(int id){
+        String sql = "SELECT * FROM car WHERE car_id = ?";
+
+        try(Connection connection = DriverManager.getConnection(url,user,password)){
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.setInt(1,id);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if(resultSet.next()){
+                return new Car(
+                        resultSet.getInt("id"),
+                        resultSet.getString("vin"),
+                        resultSet.getString("brand"),
+                        resultSet.getString("model"),
+                        CarStatus.valueOf(resultSet.getString("status")),
+                        resultSet.getBigDecimal("purchase_price")
+                );
+            }
+
+
+
     }
 
 }
