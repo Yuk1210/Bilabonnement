@@ -11,5 +11,7 @@ public interface CustomerRepository {
 
     void save(Customer customer);
 
-    void updateRentalAgreement(int id);
+    void update(Customer customer);
+
+    void deleteById(int id);
 }
