@@ -2,16 +2,14 @@ package com.example.demo.Models;
 
 public class Car {
     private int id;
-    private String vehicleNumber;
     private String vin;
     private String brand;
     private String model;
     private CarStatus status;
     private double basePrice;
 
-    public Car(int id, String vehicleNumber, String vin, String brand, String model, CarStatus status, double basePrice) {
+    public Car(int id, String vin, String brand, String model, CarStatus status, double basePrice) {
         this.id = id;
-        this.vehicleNumber = vehicleNumber;
         this.vin = vin;
         this.brand = brand;
         this.model = model;
@@ -21,10 +19,6 @@ public class Car {
 
     public int getId() {
         return id;
-    }
-
-    public String getVehicleNumber() {
-        return vehicleNumber;
     }
 
     public String getVin() {
