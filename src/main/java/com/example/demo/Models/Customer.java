@@ -5,6 +5,7 @@ public class Customer {
     private String name;
     private String email;
     private String phone;
+    private String secondphone;
 
 
     public Customer(int id, String name, String email, String phone) {
