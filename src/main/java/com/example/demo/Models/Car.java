@@ -10,7 +10,7 @@ public class Car {
     private CarStatus status;
     private BigDecimal basePrice;
 
-    public Car(int id, String vehicleNumber, String vin, String brand, String model, CarStatus status, BigDecimal basePrice) {
+    public Car(int id,  String vin, String brand, String model, CarStatus status, BigDecimal basePrice) {
         this.id = id;
         this.vin = vin;
         this.brand = brand;
