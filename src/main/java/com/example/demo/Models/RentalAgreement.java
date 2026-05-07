@@ -1,16 +1,17 @@
 package com.example.demo.Models;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class RentalAgreement {
    private int id;
    private LocalDate startDate;
    private LocalDate endDate;
-   private double totalPrice;
+   private BigDecimal totalPrice;
    Location pickupLocation;
    Location returnLocation;
 
-    public RentalAgreement(int id, LocalDate startDate, LocalDate endDate, double totalPrice, Location pickupLocation, Location returnLocation) {
+    public RentalAgreement(int id, LocalDate startDate, LocalDate endDate, BigDecimal totalPrice, Location pickupLocation, Location returnLocation) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -43,11 +44,11 @@ public class RentalAgreement {
         this.endDate = endDate;
     }
 
-    public double getTotalPrice() {
+    public BigDecimal getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 

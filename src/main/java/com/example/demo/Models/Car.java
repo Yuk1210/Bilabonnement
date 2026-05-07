@@ -1,5 +1,7 @@
 package com.example.demo.Models;
 
+import java.math.BigDecimal;
+
 public class Car {
     private int id;
     private String vehicleNumber;
@@ -7,9 +9,9 @@ public class Car {
     private String brand;
     private String model;
     private CarStatus status;
-    private double basePrice;
+    private BigDecimal basePrice;
 
-    public Car(int id, String vehicleNumber, String vin, String brand, String model, CarStatus status, double basePrice) {
+    public Car(int id, String vehicleNumber, String vin, String brand, String model, CarStatus status, BigDecimal basePrice) {
         this.id = id;
         this.vehicleNumber = vehicleNumber;
         this.vin = vin;
@@ -63,7 +65,7 @@ public class Car {
         this.status = CarStatus.UNDER_REPAIR;
     }
 
-    public double getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 }
