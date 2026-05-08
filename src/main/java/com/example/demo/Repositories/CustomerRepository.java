@@ -1,7 +1,7 @@
 package com.example.demo.Repositories;
 
 import com.example.demo.Models.Customer;
-
+import java.util.List;
 
 public interface CustomerRepository {
 
