@@ -68,6 +68,7 @@ public class JdbcCarRepository implements CarRepository {
         }
         return null;
     }
+    @Override
     public void save(Car car){
         String sql = "INSERT INTO car (vin, brand, model, status, purchase_price) VALUES (?,?,?,?,?)";
 
@@ -87,6 +88,7 @@ public class JdbcCarRepository implements CarRepository {
             System.out.println("fejl: "+e.getMessage());
         }
     }
+    @Override
     public void updateStatus(int carId, CarStatus carStatus){
         String sql = "UPDATE car SET statud = ?  WHERE car_id = ?";
 
