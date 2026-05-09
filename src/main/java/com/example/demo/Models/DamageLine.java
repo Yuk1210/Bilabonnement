@@ -1,13 +1,15 @@
 package com.example.demo.Models;
 
 
+import java.math.BigDecimal;
+
 public class DamageLine {
     private int id;
     private String description;
-    private double price;
+    private BigDecimal price;
 
 
-    public DamageLine(int id, String description, double price) {
+    public DamageLine(int id, String description, BigDecimal price) {
         this.id = id;
         this.description = description;
         this.price = price;
@@ -29,11 +31,11 @@ public class DamageLine {
         this.description = description;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 }

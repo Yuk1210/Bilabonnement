@@ -1,17 +1,17 @@
 package com.example.demo.Models;
 
+import java.math.BigDecimal;
+//dette er car klassen som indeholder alle sttributer en bil skal have.
 public class Car {
     private int id;
-    private String vehicleNumber;
     private String vin;
     private String brand;
     private String model;
     private CarStatus status;
-    private double basePrice;
+    private BigDecimal basePrice;
 
-    public Car(int id, String vehicleNumber, String vin, String brand, String model, CarStatus status, double basePrice) {
+    public Car(int id,  String vin, String brand, String model, CarStatus status, BigDecimal basePrice) {
         this.id = id;
-        this.vehicleNumber = vehicleNumber;
         this.vin = vin;
         this.brand = brand;
         this.model = model;
@@ -21,10 +21,6 @@ public class Car {
 
     public int getId() {
         return id;
-    }
-
-    public String getVehicleNumber() {
-        return vehicleNumber;
     }
 
     public String getVin() {
@@ -63,7 +59,7 @@ public class Car {
         this.status = CarStatus.UNDER_REPAIR;
     }
 
-    public double getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 }
