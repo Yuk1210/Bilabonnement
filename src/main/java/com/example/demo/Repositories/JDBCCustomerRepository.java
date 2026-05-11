@@ -1,11 +1,13 @@
 package com.example.demo.Repositories;
 
 import com.example.demo.Models.Customer;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class JDBCCustomerRepository implements CustomerRepository {
 
     String url = System.getenv("DB_URL");

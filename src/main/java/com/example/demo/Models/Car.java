@@ -1,7 +1,10 @@
 package com.example.demo.Models;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.math.BigDecimal;
 //dette er car klassen som indeholder alle sttributer en bil skal have.
+
 public class Car {
     private int id;
     private String vin;

@@ -1,11 +1,13 @@
 package com.example.demo.Repositories;
 
 import com.example.demo.Models.DamageLine;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class JDBCDamageLineRepository implements DamageLineRepository {
 
     String url = System.getenv("DB_URL");
