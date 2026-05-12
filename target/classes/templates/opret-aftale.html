@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Opret Aftale</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div th:replace="~{fragments/sidebar :: sidebar}">
+</div>
+
+<div class="content">
+<h1>Opret Reservation</h1>
+
+<form>
+<input type="text" placeholder="Navn">
+<input type="email" placeholder="Email">
+
+<select>
+<option>Vælg bil</option>
+<option>AB12345</option>
+<option>CD67890</option>
+</select>
+
+<label>Start dato</label>
+<input type="date">
+
+<label>Slut dato</label>
+<input type="date">
+
+<div class="card blue">Pris: 3500 kr</div>
+
+<div>
+<button>Gem</button>
+<button type="button">Cancel</button>
+</div>
+</form>
+</div>
+</body>
+</html>
