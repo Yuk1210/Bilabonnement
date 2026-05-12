@@ -1,5 +1,7 @@
 package com.example.demo.Models;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.math.BigDecimal;
 
 public class Car {

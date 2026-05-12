@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="sidebar">
+
+    <div class="sidebar">
+
+        <h2>BilAdmin</h2>
+
+        <a href="/">Dashboard</a>
+
+        <div class="dropdown">
+
+            <a href="/aftaler">
+                Aftaler
+            </a>
+
+            <div class="dropdown-content">
+
+                <a href="/aftaler/opret">
+                    Opret Aftale
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="dropdown">
+
+            <a href="/skader">
+                Skader
+            </a>
+
+            <div class="dropdown-content">
+
+                <a href="/skader/opret">
+                    Opret Skade
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="dropdown">
+
+            <a href="/kunder">
+                Kunder
+            </a>
+
+            <div class="dropdown-content">
+
+                <a href="/kunder/opret">
+                    Opret Kunde
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="/biler">
+            Biler
+        </a>
+
+        <a href="/okonomi">
+            Økonomi
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

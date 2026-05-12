@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 @Repository
 public class JdbcRentalAgreementRepository implements RentalAgreementRepository {
 
@@ -47,7 +48,7 @@ public class JdbcRentalAgreementRepository implements RentalAgreementRepository 
             }
 
         } catch (SQLException e){
-            System.out.println("fejl: " + e.getMessage());
+            System.out.println("fejl: kunne ikke oprette Lejeaftale " + e.getMessage());
         }
 
         return rentalAgreements;
@@ -80,7 +81,7 @@ public class JdbcRentalAgreementRepository implements RentalAgreementRepository 
 
           }
       } catch (SQLException e){
-          System.out.println("fejl: " + e.getMessage());
+          System.out.println("fejl: kunne ikke finde Lejeaftalen " + e.getMessage());
       }
       return null;
     }
@@ -105,7 +106,7 @@ public class JdbcRentalAgreementRepository implements RentalAgreementRepository 
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("fejl: " + e.getMessage());
+            System.out.println("fejl: kunne ikke gemme Lejeaftalen " + e.getMessage());
         }
     }
 
@@ -132,7 +133,7 @@ public class JdbcRentalAgreementRepository implements RentalAgreementRepository 
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("fejl: " + e.getMessage());
+            System.out.println("fejl: kan ikke opdatere " + e.getMessage());
         }
     }
     @Override
@@ -146,7 +147,7 @@ public class JdbcRentalAgreementRepository implements RentalAgreementRepository 
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("fejl: " + e.getMessage());
+            System.out.println("fejl: Lejeaftalen blev ikke slettet " + e.getMessage());
         }
     }
     }

@@ -2,6 +2,7 @@ package com.example.demo.Repositories;
 
 import com.example.demo.Models.Car;
 import com.example.demo.Models.CarStatus;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
