@@ -14,8 +14,8 @@ public class CustomerService {
 
     private CustomerRepository customerRepository;
 
-    public CustomerService() {
-        this.customerRepository = new JDBCCustomerRepository();
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
     public List<Customer> getAllCustomers() {
