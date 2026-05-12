@@ -7,10 +7,14 @@ public class Customer {
     private String phone;
     private String secondphone;
 
-
     public Customer(int id, String name, String email, String phone) {
         this.id = id;
         this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public void updateContactInfo(String email, String phone) {
         this.email = email;
         this.phone = phone;
     }

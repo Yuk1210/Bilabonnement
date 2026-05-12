@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Aftaler</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div th:replace="~{fragments/sidebar :: sidebar}">
+</div>
+
+<div class="content">
+<div class="topbar">
+<h1>Reservationer</h1>
+<a href="/aftaler/opret"><button>Opret Aftale</button></a>
+</div>
+
+<table>
+<tr>
+<th>Navn</th>
+<th>Email</th>
+<th>Bil</th>
+<th>Start</th>
+<th>Slut</th>
+<th>overkørsel</th>
+</tr>
+
+</table>
+</div>
+</body>
+</html>
