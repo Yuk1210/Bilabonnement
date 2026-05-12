@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 class RentalAgreementValidationTest {
 
     @Test
@@ -12,15 +15,13 @@ class RentalAgreementValidationTest {
         LocalDate startDate = LocalDate.now();
         LocalDate endDate = startDate.plusDays(7);
 
-        // Udfyld her: Opret den klasse eller service, som validerer lejeaftalens datoer.
-        // Eksempel: RentalAgreement rentalAgreement = new RentalAgreement(startDate, endDate);
+        RentalAgreement rentalAgreement = new RentalAgreement(startDate, endDate);
 
         // Act
-        // Udfyld her: Kald den metode, som validerer datoerne.
-        // Eksempel: boolean isValid = rentalAgreement.hasValidDates();
+        boolean isValid = rentalAgreement.hasValidDates();
 
         // Assert
-        // Udfyld her: assertTrue(isValid);
+        assertTrue(isValid);
     }
 
     @Test
@@ -29,15 +30,13 @@ class RentalAgreementValidationTest {
         LocalDate startDate = null;
         LocalDate endDate = LocalDate.now().plusDays(7);
 
-        // Udfyld her: Opret den klasse eller service, som validerer lejeaftalens datoer.
-        // Eksempel: RentalAgreement rentalAgreement = new RentalAgreement(startDate, endDate);
+        RentalAgreement rentalAgreement = new RentalAgreement(startDate, endDate);
 
         // Act
-        // Udfyld her: Kald den metode, som validerer datoerne.
-        // Hvis jeres løsning kaster exception, så brug assertThrows i stedet.
+        boolean isValid = rentalAgreement.hasValidDates();
 
         // Assert
-        // Udfyld her: assertFalse(...) eller assertThrows(...), afhængigt af jeres løsning.
+        assertFalse(isValid);
     }
 
     @Test
@@ -46,14 +45,12 @@ class RentalAgreementValidationTest {
         LocalDate startDate = LocalDate.now();
         LocalDate endDate = startDate.minusDays(1);
 
-        // Udfyld her: Opret den klasse eller service, som validerer lejeaftalens datoer.
-        // Eksempel: RentalAgreement rentalAgreement = new RentalAgreement(startDate, endDate);
+        RentalAgreement rentalAgreement = new RentalAgreement(startDate, endDate);
 
         // Act
-        // Udfyld her: Kald den metode, som validerer datoerne.
-        // Hvis jeres løsning kaster exception, så brug assertThrows i stedet.
+        boolean isValid = rentalAgreement.hasValidDates();
 
         // Assert
-        // Udfyld her: assertFalse(...) eller assertThrows(...), afhængigt af jeres løsning.
+        assertFalse(isValid);
     }
 }
