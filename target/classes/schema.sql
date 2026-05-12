@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS bilabonnement;
 
-Use bilabonnement;
+USE bilabonnement;
 
 CREATE TABLE customer (
                           customer_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -15,7 +15,7 @@ CREATE TABLE car (
                      brand VARCHAR(50) NOT NULL,
                      model VARCHAR(50) NOT NULL,
                      status VARCHAR(30) NOT NULL,
-                     purchase_price DOUBLE
+                     purchase_price DECIMAL(15,2)
 );
 
 CREATE TABLE rental_agreement (
@@ -24,7 +24,7 @@ CREATE TABLE rental_agreement (
                                   car_id INT NOT NULL,
                                   start_date DATE NOT NULL,
                                   end_date DATE,
-                                  rental_price DOUBLE,
+                                  rental_price DECIMAL(15,2),
                                   pickup_location VARCHAR(100),
                                   return_location VARCHAR(100),
 
@@ -45,8 +45,7 @@ CREATE TABLE damage_line (
                              damage_line_id INT AUTO_INCREMENT PRIMARY KEY,
                              report_id INT NOT NULL,
                              description VARCHAR(300) NOT NULL,
-                             price DOUBLE NOT NULL,
+                             price DECIMAL(15,2) NOT NULL,
 
                              FOREIGN KEY (report_id) REFERENCES damage_report(report_id)
 );
-

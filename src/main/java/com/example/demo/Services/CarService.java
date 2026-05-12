@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CarService {
+public class
+
+CarService {
 
     private final CarRepository carRepository;
     public CarService(CarRepository carRepository) {
