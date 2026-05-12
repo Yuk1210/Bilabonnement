@@ -14,7 +14,7 @@ class DamageReportServiceTest {
     void shouldReturnTotalPriceForOneDamage() {
         // Arrange
         List<DamageLine> damageLines = List.of(
-                new DamageLine(1, "Scratch on door", 1500.00)
+                new DamageLine(1, "Skramme på dør", 1500.00)
         );
         double expectedTotalPrice = 1500.00;
 
@@ -31,9 +31,9 @@ class DamageReportServiceTest {
     void shouldReturnSumOfMultipleDamageLines() {
         // Arrange
         List<DamageLine> damageLines = List.of(
-                new DamageLine(1, "Scratch on door", 1500.00),
-                new DamageLine(2, "Broken mirror", 2000.00),
-                new DamageLine(3, "Dent in bumper", 500.00)
+                new DamageLine(1, "Skramme på dør", 1500.00),
+                new DamageLine(2, "Ødelagt rude", 2000.00),
+                new DamageLine(3, "Bule på bil", 500.00)
         );
         double expectedTotalPrice = 4000.00;
 
