@@ -11,6 +11,10 @@ public class RentalAgreement {
    Location pickupLocation;
    Location returnLocation;
 
+    public RentalAgreement(LocalDate startDate, LocalDate endDate) {
+        this(0, startDate, endDate, BigDecimal.ZERO, null, null);
+    }
+
     public RentalAgreement(int id, LocalDate startDate, LocalDate endDate, BigDecimal rentalPrice, Location pickupLocation, Location returnLocation) {
         this.id = id;
         this.startDate = startDate;
@@ -66,5 +70,11 @@ public class RentalAgreement {
 
     public void setReturnLocation(Location returnLocation) {
         this.returnLocation = returnLocation;
+    }
+
+    public boolean hasValidDates() {
+        return startDate != null
+                && endDate != null
+                && !endDate.isBefore(startDate);
     }
 }
