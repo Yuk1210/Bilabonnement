@@ -32,6 +32,11 @@ public class CustomerService {
     }
 
     @Transactional
+    public void addCustomer(Customer customer) {
+        createCustomer(customer);
+    }
+
+    @Transactional
     public void updateCustomer(Customer customer) {
         customerRepository.update(customer);
     }
