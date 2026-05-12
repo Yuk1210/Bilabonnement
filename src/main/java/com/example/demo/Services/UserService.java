@@ -6,10 +6,10 @@ import com.example.demo.Repositories.UserRepository;
 
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public UserService() {
-        this.userRepository = new JDBCUserRepository();
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public User login(String username, String password) {
