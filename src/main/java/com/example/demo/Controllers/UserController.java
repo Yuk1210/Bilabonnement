@@ -1,6 +1,7 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.Models.User;
+import com.example.demo.Repositories.UserRepository;
 import com.example.demo.Services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -11,7 +12,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class UserController {
 
-    private UserService userService = new UserService();
+    private final  UserService userService;
+
+    public  UserController(UserService userService){
+        this.userService = userService;
+    }
+
+
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, HttpSession session) {
