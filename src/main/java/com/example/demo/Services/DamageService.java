@@ -2,6 +2,7 @@ package com.example.demo.Services;
 
 import com.example.demo.Models.DamageLine;
 import com.example.demo.Models.DamageReport;
+import com.example.demo.Repositories.DamageReportRepository;
 import com.example.demo.Repositories.JDBCDamageReportRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +11,10 @@ import java.util.List;
 @Service
 public class DamageService {
 
-    private final JDBCDamageReportRepository damageReportRepository;
+    private final DamageReportRepository repository;
 
-    public DamageService() {
-        this.damageReportRepository = new JDBCDamageReportRepository();
+    public DamageService(DamageReportRepository repository) {
+        this.repository = repository;
     }
 
     public double calculateTotalDamagePrice(List<DamageLine> damageLines) {
@@ -23,10 +24,22 @@ public class DamageService {
     }
 
     public List<DamageReport> getAllDamageReports() {
-        return damageReportRepository.findAll();
+        return repository.findAll();
+    }
+
+    public DamageReport getDamageReportById(int id) {
+        return repository.findById(id);
     }
 
     public void addDamageReport(DamageReport damageReport) {
-        damageReportRepository.save(damageReport);
+        repository.save(damageReport);
+    }
+
+    public void updateDamageReport(DamageReport damageReport) {
+        repository.update(damageReport);
+    }
+
+    public void deleteDamageReportById(int id) {
+        repository.deleteById(id);
     }
 }
