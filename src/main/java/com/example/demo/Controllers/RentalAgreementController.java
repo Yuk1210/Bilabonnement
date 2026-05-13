@@ -27,7 +27,7 @@ public class RentalAgreementController {
 
     @GetMapping("/aftaler/opret")
     public String createForm(Model model) {
-        model.addAttribute("agreement", new RentalAgreement(0, null, null, new BigDecimal("3,25"), null, null));
+        model.addAttribute("agreement", new RentalAgreement(0, null, null, new BigDecimal("3.25"), null, null));
         return "opret-aftale";
     }
 
