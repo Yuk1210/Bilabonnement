@@ -1,7 +1,6 @@
 package com.example.demo.Models;
 
 public class User {
-
     private int id;
     private String username;
     private String password;
@@ -11,15 +10,12 @@ public class User {
         this.username = username;
         this.password = password;
     }
-
     public int getId() {
         return id;
     }
-
     public String getUsername() {
         return username;
     }
-
     public String getPassword() {
         return password;
     }
