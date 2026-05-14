@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/sidebar :: sidebar}">
+</div>
+
+<div class="content">
+
+    <h1>Dashboard</h1>
+
+    <div class="stats">
+
+        <div>
+            <h2>12</h2>
+            <p>Returnerede biler</p>
+        </div>
+
+        <div>
+            <h2>7</h2>
+            <p>Udlejede biler</p>
+        </div>
+
+        <div>
+            <h2>5</h2>
+            <p>Ledige biler</p>
+        </div>
+
+    </div>
+
+    <h2>Status</h2>
+
+    <table>
+
+        <tr>
+            <th>Nummerplade</th>
+            <th>Status</th>
+        </tr>
+
+        <tr th:each="car : ${cars}">
+
+            <td th:text="${car.vin}"></td>
+
+            <td>
+
+            <span th:text="${car.status}"
+                  th:classappend="${car.status == 'AVAILABLE'} ? 'green' :
+                                   (${car.status == 'DAMAGED'} ? 'red' :
+                                   (${car.status == 'RETURNED'} ? 'blue' : 'yellow'))">
+            </span>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>

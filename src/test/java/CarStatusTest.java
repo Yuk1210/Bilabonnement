@@ -2,6 +2,8 @@ package com.example.demo.Models;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CarStatusTest {
@@ -11,12 +13,11 @@ class CarStatusTest {
         // Arrange
         Car car = new Car(
                 1,
-                "AZ131313",
                 "VIN113",
                 "Toyota",
                 "Yaris",
                 CarStatus.AVAILABLE,
-                500
+                BigDecimal.valueOf(500)
         );
 
         // Act
@@ -31,12 +32,11 @@ class CarStatusTest {
         // Arrange
         Car car = new Car(
                 1,
-                "AZ13131",
                 "VIN123",
                 "Toyota",
                 "Yaris",
                 CarStatus.UNAVAILABLE,
-                500
+                BigDecimal.valueOf(500)
         );
 
         // Act
@@ -51,12 +51,11 @@ class CarStatusTest {
         // Arrange
         Car car = new Car(
                 1,
-                "AZ13131",
                 "VIN113",
                 "Toyota",
                 "Yaris",
                 CarStatus.UNAVAILABLE,
-                500
+                BigDecimal.valueOf(500)
         );
 
         // Act

@@ -1,0 +1,9 @@
+Bilabonnoment.dk oplever problemer med deres nuværende arbejdsgange, 
+da de er baseret på manuelle Excel ark. 
+Dette gør det svært at holde styr på data, 
+koordinere mellem de forskellige interessenter og undgå fejl.
+
+Derudover mangler virksomheden et samlet system til at håndtere bilens livscyklus, 
+herunder tilbagelevering, skader og videre behandling.
+Manglen på et effektivt system kan fører til økonomisk tab, 
+ineffektivitet og dårligere beslutningsgrundlag.

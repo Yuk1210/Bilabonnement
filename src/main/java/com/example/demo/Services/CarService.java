@@ -3,10 +3,14 @@ package com.example.demo.Services;
 import com.example.demo.Models.Car;
 import com.example.demo.Models.CarStatus;
 import com.example.demo.Repositories.CarRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class CarService {
+@Service
+public class
+
+CarService {
 
     private final CarRepository carRepository;
     public CarService(CarRepository carRepository) {

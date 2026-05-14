@@ -1,7 +1,7 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.Models.DamageReport;
-import com.example.demo.Services.DamageReportService;
+import com.example.demo.Services.DamageService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class DamageReportController {
 
-    private final DamageReportService service;
+    private final DamageService service;
 
-    public DamageReportController(DamageReportService service) {
+    public DamageReportController(DamageService service) {
         this.service = service;
     }
 
