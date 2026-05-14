@@ -1,6 +1,5 @@
 package com.example.demo.Repositories;
 
-import com.example.demo.Models.UserRoles;
 import com.example.demo.Models.User;
 
 import java.sql.*;
@@ -16,24 +15,28 @@ public class JDBCUserRepository implements UserRepository {
 
         String sql = "SELECT * FROM users WHERE username = ?";
 
-        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+        try(Connection connection =
+                    DriverManager.getConnection(url, user, password)) {
 
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement =
+                    connection.prepareStatement(sql);
+
             statement.setString(1, username);
 
             ResultSet resultSet = statement.executeQuery();
 
-            if (resultSet.next()) {
+            if(resultSet.next()) {
+
                 return new User(
                         resultSet.getInt("user_id"),
                         resultSet.getString("username"),
-                        resultSet.getString("password"),
-                        UserRoles.valueOf(resultSet.getString("role"))
+                        resultSet.getString("password")
                 );
             }
 
-        } catch (SQLException e) {
-            System.out.println("Der er fejl i findByUsername: " + e.getMessage());
+        } catch(SQLException e) {
+
+            System.out.println(e.getMessage());
         }
 
         return null;

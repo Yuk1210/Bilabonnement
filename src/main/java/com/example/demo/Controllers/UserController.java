@@ -3,6 +3,8 @@ package com.example.demo.Controllers;
 import com.example.demo.Models.User;
 import com.example.demo.Services.UserService;
 
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,21 +15,13 @@ public class UserController {
     private UserService userService = new UserService();
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password) {
-        User user = userService.login(username, password);
+    public String login(@RequestParam String username, @RequestParam String email, @RequestParam String password, HttpSession session) {
+        User user = userService.login(username,email, password);
 
-        if (user != null) {
-            if (user.getRole().name().equals("DATAREGISTRERING")) {
-                return "rentalagreement";
-            }
-            if (user.getRole().name().equals("SKADE")) {
-                return "damagereport";
-            }
-            if (user.getRole().name().equals("FORRETNINGSUDVIKLER")) {
-                return "dashboard";
-            }
+        if(user != null) {
+            session.setAttribute("user", user);
+            return "index";
         }
-
         return "login";
     }
 }
