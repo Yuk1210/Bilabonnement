@@ -2,6 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Models.DamageReport;
 import com.example.demo.Services.DamageService;
+import jakarta.websocket.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

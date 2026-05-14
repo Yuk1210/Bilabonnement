@@ -1,5 +1,7 @@
-package com.example.demo.Models;
+package com.example.demo;
 
+import com.example.demo.Models.Car;
+import com.example.demo.Models.CarStatus;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
