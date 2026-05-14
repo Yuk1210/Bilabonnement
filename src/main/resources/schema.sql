@@ -1,8 +1,3 @@
-CREATE DATABASE IF NOT EXISTS bilabonnement;
-
-USE bilabonnement;
-
-
 
 CREATE TABLE customer (
                           customer_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -57,8 +52,8 @@ CREATE TABLE users (
 
                        username VARCHAR(50),
 
-                       password VARCHAR(50),
+                       password VARCHAR(50)
 
-                       role VARCHAR(50)
+
 
 );
