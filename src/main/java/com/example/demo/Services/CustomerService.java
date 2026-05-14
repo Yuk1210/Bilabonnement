@@ -14,8 +14,8 @@ public class CustomerService {
 
     private CustomerRepository customerRepository;
 
-    public CustomerService() {
-        this.customerRepository = new JDBCCustomerRepository();
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
     public List<Customer> getAllCustomers() {
@@ -29,6 +29,11 @@ public class CustomerService {
     @Transactional
     public void createCustomer(Customer customer) {
         customerRepository.save(customer);
+    }
+
+    @Transactional
+    public void addCustomer(Customer customer) {
+        createCustomer(customer);
     }
 
     @Transactional

@@ -14,8 +14,8 @@ public class DamageLineService {
 
     private DamageLineRepository damageLineRepository;
 
-    public DamageLineService() {
-        this.damageLineRepository = new JDBCDamageLineRepository();
+    public DamageLineService(DamageLineRepository damageLineRepository) {
+        this.damageLineRepository = damageLineRepository;
     }
 
     public List<DamageLine> getAllDamageLines() {
