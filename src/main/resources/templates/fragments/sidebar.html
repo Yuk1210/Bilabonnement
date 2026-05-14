@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <body>
 
 <div th:fragment="sidebar">
@@ -9,61 +8,54 @@
 
         <h2>BilAdmin</h2>
 
-        <a href="/">Dashboard</a>
+        <a th:href="@{/}">Dashboard</a>
 
+        <!-- KUNDER -->
         <div class="dropdown">
 
-            <a href="/aftaler">
-                Aftaler
-            </a>
-
-            <div class="dropdown-content">
-
-                <a href="/aftaler/opret">
-                    Opret Aftale
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="dropdown">
-
-            <a href="/skader">
-                Skader
-            </a>
-
-            <div class="dropdown-content">
-
-                <a href="/skader/opret">
-                    Opret Skade
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="dropdown">
-
-            <a href="/kunder">
+            <a th:href="@{/kunder}">
                 Kunder
             </a>
 
             <div class="dropdown-content">
-
-                <a href="/kunder/opret">
-                    Opret Kunde
+                <a th:href="@{/kunder/opret}">
+                    Opret kunde
                 </a>
-
             </div>
 
         </div>
 
-        <a href="/biler">
-            Biler
-        </a>
+        <!-- AFTALER -->
+        <div class="dropdown">
 
-        <a href="/okonomi">
+            <a th:href="@{/aftaler}">
+                Aftaler
+            </a>
+
+            <div class="dropdown-content">
+                <a th:href="@{/aftaler/opret}">
+                    Opret aftale
+                </a>
+            </div>
+
+        </div>
+
+        <!-- SKADER -->
+        <div class="dropdown">
+
+            <a th:href="@{/skader}">
+                Skader
+            </a>
+
+            <div class="dropdown-content">
+                <a th:href="@{/skader/opret}">
+                    Opret skade
+                </a>
+            </div>
+
+        </div>
+
+        <a th:href="@{/okonomi}">
             Økonomi
         </a>
 
@@ -72,5 +64,4 @@
 </div>
 
 </body>
-
 </html>
