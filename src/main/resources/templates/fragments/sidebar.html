@@ -10,20 +10,40 @@
 
         <a th:href="@{/}">Dashboard</a>
 
+        <!-- KUNDER -->
         <div class="dropdown">
+
+            <a th:href="@{/kunder}">
+                Kunder
+            </a>
+
+            <div class="dropdown-content">
+                <a th:href="@{/kunder/opret}">
+                    Opret kunde
+
             <a th:href="@{/aftaler}">Aftaler</a>
 
             <div class="dropdown-content">
                 <a th:href="@{/aftaler/opret}">
                     Opret aftale
+
                 </a>
             </div>
 
         </div>
 
+        <!-- AFTALER -->
         <div class="dropdown">
 
-            <a th:href="@{/skader}">
+
+            <a th:href="@{/aftaler}">
+                Aftaler
+            </a>
+
+            <div class="dropdown-content">
+                <a th:href="@{/aftaler/opret}">
+                    Opret aftale
+                  <a th:href="@{/skader}">
                 Skader
             </a>
 
@@ -32,13 +52,19 @@
                 <a th:href="@{/skader/opret}">
                     Opret skade
                 </a>
-
             </div>
 
         </div>
 
+        <!-- SKADER -->
         <div class="dropdown">
+            <a th:href="@{/skader}">
+                Skader
+            </a>
 
+            <div class="dropdown-content">
+                <a th:href="@{/skader/opret}">
+                    Opret skade
             <a th:href="@{/kunder}">
                 Kunder
             </a>
@@ -48,7 +74,6 @@
                 <a th:href="@{/kunder/opret}">
                     Opret kunde
                 </a>
-
             </div>
 
         </div>
