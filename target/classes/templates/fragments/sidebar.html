@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <body>
 
 <div th:fragment="sidebar">
@@ -9,34 +8,29 @@
 
         <h2>BilAdmin</h2>
 
-        <a href="/">Dashboard</a>
+        <a th:href="@{/}">Dashboard</a>
 
         <div class="dropdown">
-
-            <a href="/aftaler">
-                Aftaler
-            </a>
+            <a th:href="@{/aftaler}">Aftaler</a>
 
             <div class="dropdown-content">
-
-                <a href="/aftaler/opret">
-                    Opret Aftale
+                <a th:href="@{/aftaler/opret}">
+                    Opret aftale
                 </a>
-
             </div>
 
         </div>
 
         <div class="dropdown">
 
-            <a href="/skader">
+            <a th:href="@{/skader}">
                 Skader
             </a>
 
             <div class="dropdown-content">
 
-                <a href="/skader/opret">
-                    Opret Skade
+                <a th:href="@{/skader/opret}">
+                    Opret skade
                 </a>
 
             </div>
@@ -45,25 +39,25 @@
 
         <div class="dropdown">
 
-            <a href="/kunder">
+            <a th:href="@{/kunder}">
                 Kunder
             </a>
 
             <div class="dropdown-content">
 
-                <a href="/kunder/opret">
-                    Opret Kunde
+                <a th:href="@{/kunder/opret}">
+                    Opret kunde
                 </a>
 
             </div>
 
         </div>
 
-        <a href="/biler">
+        <a th:href="@{/biler}">
             Biler
         </a>
 
-        <a href="/okonomi">
+        <a th:href="@{/okonomi}">
             Økonomi
         </a>
 
@@ -72,5 +66,4 @@
 </div>
 
 </body>
-
 </html>

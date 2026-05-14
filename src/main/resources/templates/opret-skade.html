@@ -1,39 +1,68 @@
-
 <!DOCTYPE html>
-<html lang="da">
+
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Opret Skade</title>
-<link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
 </head>
+
 <body>
 
-<div th:replace="~{fragments/sidebar :: sidebar}">
+<div th:replace="~{fragments/sidebar::sidebar}">
 </div>
 
 <div class="content">
-<h1>Opret Skade</h1>
 
-<form>
+    <h1>Opret skade</h1>
 
-<select>
-<option>Vælg bil</option>
-<option>AB12345</option>
-</select>
+    <form th:action="@{/skader/gem}"
+          th:object="${damageReport}"
+          method="post">
 
-<label><input type="checkbox"> Ridser</label>
-<label><input type="checkbox"> Bule</label>
-<label><input type="checkbox"> Smadret rude</label>
+        <label>Vælg bil</label>
+        <select th:field="*{car.id}">
+            <option th:each="car : ${cars}"
+                    th:value="${car.id}"
+                    th:text="${car.vin}">
+            </option>
+        </select>
 
-<textarea placeholder="Beskrivelse"></textarea>
+        <label>Skader</label>
 
-<input type="date">
+        <div class="checkboxes">
 
-<div class="card red">Pris: 4200 kr</div>
+            <label>
+                <input type="checkbox" value="BULK">
+                Bulk skade (500)
+            </label>
 
-<button>Gem skade</button>
+            <label>
+                <input type="checkbox" value="SCRATCH">
+                Ridse (200)
+            </label>
 
-</form>
+            <label>
+                <input type="checkbox" value="BROKEN_LIGHT">
+                Lygte (800)
+            </label>
+
+        </div>
+
+        <label>Beskrivelse</label>
+        <textarea th:field="*{description}"></textarea>
+
+        <p>
+            Total pris:
+            <span th:text="${totalPrice}"></span>
+        </p>
+
+        <button>Gem</button>
+
+    </form>
+
 </div>
+
 </body>
+
 </html>

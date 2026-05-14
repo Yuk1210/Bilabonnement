@@ -1,33 +1,69 @@
-
 <!DOCTYPE html>
-<html lang="da">
+
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Aftaler</title>
-<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
 </head>
+
 <body>
 
-<div th:replace="~{fragments/sidebar :: sidebar}">
+<div th:replace="~{fragments/sidebar::sidebar}">
 </div>
 
 <div class="content">
-<div class="topbar">
-<h1>Reservationer</h1>
-<a href="/aftaler/opret"><button>Opret Aftale</button></a>
+
+    <div class="topbar">
+
+        <h1>Aftaler</h1>
+
+        <a th:href="@{/aftaler/opret}">
+            <button>Opret</button>
+        </a>
+
+    </div>
+
+    <h1>Opret aftale</h1>
+
+    <form th:action="@{/aftaler/gem}"
+          th:object="${agreement}"
+          method="post">
+
+        <label>Start dato</label>
+        <input type="date" th:field="*{startDate}">
+
+        <label>Slut dato</label>
+        <input type="date" th:field="*{endDate}">
+
+        <label>Vælg kunde</label>
+        <select th:field="*{customer.id}">
+            <option th:each="c : ${customers}"
+                    th:value="${c.id}"
+                    th:text="${c.name}">
+            </option>
+        </select>
+
+        <label>Vælg bil</label>
+        <select th:field="*{car.id}">
+            <option th:each="car : ${cars}"
+                    th:value="${car.id}"
+                    th:text="${car.brand + ' ' + car.model}">
+            </option>
+        </select>
+
+        <p>
+            Pris:
+            <span th:text="${calculatedPrice}"></span>
+        </p>
+
+        <button>Gem</button>
+
+    </form>
 </div>
 
-<table>
-<tr>
-<th>Navn</th>
-<th>Email</th>
-<th>Bil</th>
-<th>Start</th>
-<th>Slut</th>
-<th>overkørsel</th>
-</tr>
-
-</table>
-</div>
 </body>
+
 </html>
