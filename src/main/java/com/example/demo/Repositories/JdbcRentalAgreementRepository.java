@@ -112,7 +112,7 @@ public class JdbcRentalAgreementRepository implements RentalAgreementRepository 
 
     @Override
     public void update(RentalAgreement rentalAgreement) {
-        String sql = "UPDATE rental_agreement SET star_date = ?, end_date = ?, rental_price = ?, pickup_location = ?, return_location = ? WHERE rental_id = ?";
+        String sql = "UPDATE rental_agreement SET start_date = ?, end_date = ?, rental_price = ?, pickup_location = ?, return_location = ? WHERE rental_id = ?";
 
         try (Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement statement = connection.prepareStatement(sql)) {
