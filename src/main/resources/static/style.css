@@ -1,6 +1,5 @@
 :root{
     --background:#f7f7f7;
-
     --sidebar:#111827;
 
     --gold:#d4b483;
@@ -15,10 +14,8 @@
 
     --green:#22c55e;
     --red:#ef4444;
-    --yellow:#facc15;
-    --blue:#3b82f6;
 
-    --shadow:0 4px 20px rgba(0,0,0,0.05);
+    --shadow:0 4px 20px rgba(0,0,0,0.08);
 }
 
 /* BODY */
@@ -26,7 +23,6 @@
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    display:flex;
     background:var(--background);
     color:var(--text);
 }
@@ -39,6 +35,8 @@ body{
     background:var(--sidebar);
     padding:25px;
     position:fixed;
+    left:0;
+    top:0;
 }
 
 .sidebar h2{
@@ -65,45 +63,127 @@ body{
 
 .content{
     margin-left:300px;
-    padding:40px;
-    width:100%;
+    padding:40px 50px;
 }
 
-/* CARDS */
-
-.card{
-    background:var(--white);
-    border-radius:18px;
-    padding:25px;
-    box-shadow:var(--shadow);
+.content h1{
+    font-size:42px;
+    margin-bottom:25px;
 }
 
-.stats{
-    display:flex;
-    gap:20px;
+/* SEARCH */
+
+input[type="text"]{
+    width:320px;
+    padding:15px;
+    border:1px solid #d1d5db;
+    border-radius:14px;
+    font-size:16px;
     margin-bottom:35px;
+    background:white;
 }
 
-.stats .card{
-    width:220px;
+input[type="text"]:focus{
+    outline:none;
+    border-color:var(--gold);
 }
 
-/* STATUS COLORS */
+/* CAR GRID */
 
-.green{
-    border-left:7px solid var(--green);
+.car-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:35px;
+    margin-top:30px;
 }
 
-.red{
-    border-left:7px solid var(--red);
+/* CAR CARD */
+
+.car-card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:0.3s;
+    cursor:pointer;
+    border:none;
 }
 
-.yellow{
-    border-left:7px solid var(--yellow);
+.car-card:hover{
+    transform:translateY(-5px);
 }
 
-.blue{
-    border-left:7px solid var(--blue);
+/* REMOVE DEFAULT DETAILS STYLE */
+
+.car-card summary{
+    list-style:none;
+    cursor:pointer;
+}
+
+.car-card summary::-webkit-details-marker{
+    display:none;
+}
+
+/* IMAGE */
+
+.car-img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
+
+/* TITLE */
+
+.car-card h3{
+    text-align:center;
+    font-size:30px;
+    margin:20px 0 10px;
+    color:var(--text);
+}
+
+/* STATUS */
+
+.status-line{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.status-badge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:15px;
+    color:white;
+}
+
+.status-badge.ledig{
+    background:var(--green);
+    box-shadow:0 0 12px rgba(34,197,94,0.7);
+}
+
+.status-badge.udlejet{
+    background:var(--red);
+    box-shadow:0 0 12px rgba(239,68,68,0.7);
+}
+
+/* INFO */
+
+.car-info{
+    display:none;
+    padding:0 25px 25px;
+}
+
+.car-card[open] .car-info{
+    display:block;
+}
+
+.car-info p{
+    margin:12px 0;
+    color:var(--text-light);
+    line-height:1.6;
+    font-size:16px;
 }
 
 /* TABLES */
@@ -176,26 +256,6 @@ textarea:focus{
     outline:none;
     border-color:var(--gold);
     background:var(--white);
-}
-
-/* CAR IMAGES */
-
-.car-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.car-grid img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-    border-radius:18px;
-    transition:0.3s;
-}
-
-.car-grid img:hover{
-    transform:scale(1.03);
 }
 
 /* TOPBAR */
